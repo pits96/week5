@@ -5,6 +5,22 @@
     <title>Week 5</title>
 </head>
 <body>
-<h1>Week 5</h1>
+<h1>{{@title}}</h1>
+<h1>You are logged in as {{@username}}, with password {{@password}}</h1>
+<h3>I like {{@color}}</h3>
+<h4>{{round(2*3.14*@radius)}}</h4>
+
+<h4>Fruits</h4>
+<repeat group="{{@fruits}}" value = "{{@fruit}}">
+    <p>{{@fruit}}</p>
+</repeat>
+<ul>
+<repeat group="{{@bookmarks}}" value="{{@site}}">
+    <li><a href="{{@site}}">{{str_replace('https://',' ',@site)}}</a></li>
+</repeat>
+</ul>
+<repeat group="{{@desserts}}" key="{{@key}}" value="{{@value}}">
+<input type="checkbox" value="{{@key}}">{{@value}}<br>
+</repeat>
 </body>
 </html>
